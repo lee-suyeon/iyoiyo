@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Sans_KR, Josefin_Sans } from "next/font/google";
 import "@/styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const ibmPlexSansKr = IBM_Plex_Sans_KR({
+  subsets: ["latin"],
+  style: ["normal"],
+  weight: ["400", "600", "700"],
+});
+const josefinSans = Josefin_Sans({
+  subsets: ["latin"],
+  style: ["normal"],
+  weight: ["400", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="h-full">
+      <body
+        className={`h-full ${ibmPlexSansKr.className} ${josefinSans.className} font-body`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

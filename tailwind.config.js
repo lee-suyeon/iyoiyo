@@ -7,6 +7,10 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      logo: ["Josefin_Sans"],
+      body: ["IBM_Plex_Sans_KR"],
+    },
     extend: {},
   },
   plugins: [],
