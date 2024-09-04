@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_KR, Josefin_Sans } from "next/font/google";
+import { IBM_Plex_Sans_KR, Josefin_Sans, Inter } from "next/font/google";
 import "@/styles/globals.css";
 
 const ibmPlexSansKr = IBM_Plex_Sans_KR({
@@ -11,6 +11,9 @@ const josefinSans = Josefin_Sans({
   subsets: ["latin"],
   style: ["normal"],
   weight: ["400", "700"],
+});
+const inter = Inter({
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`h-full ${ibmPlexSansKr.className} ${josefinSans.className} font-body`}
+        className={`h-full ${ibmPlexSansKr.className} ${josefinSans.className} ${inter.className}`}
       >
         {children}
       </body>

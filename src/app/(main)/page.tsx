@@ -34,7 +34,7 @@ export default function Home() {
         완성된 작품은 갤러리에서 감상할 수 있어요.
       </p>
       <Button>작업실 만들기</Button>
-      <Link href="" className="text-sm font-semibold text-blue-950 mt-3">
+      <Link href="/login" className="text-sm font-semibold text-blue-950 mt-3">
         이미 작업실이 있으신가요?
       </Link>
     </main>
