@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     fontFamily: {
       logo: ["Josefin_Sans"],
-      body: ["IBM_Plex_Sans_KR"],
+      en: ["Inter"],
+      kor: ["IBM_Plex_Sans_KR"],
     },
     extend: {},
   },
