@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Button, TextInput } from "@/common";
+import { Button, TextInput, CheckBox } from "@/common";
 
 function LoginPage() {
   const [inputs, setInputs] = useState({
@@ -32,6 +32,13 @@ function LoginPage() {
           value={inputs.password}
           onChange={handleChange}
           placeholder="Password"
+        />
+        <CheckBox
+          name="saveId"
+          label="아이디 저장"
+          value={"save"}
+          checked={false}
+          onChange={() => console.log("radio")}
         />
       </div>
       <Button fullWidth>Log in</Button>
