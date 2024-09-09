@@ -12,7 +12,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className="h-full flex flex-col items-center px-4">{children}</body>
+      <body className="h-full flex flex-col items-center px-4 mt-5">
+        {children}
+      </body>
     </html>
   );
 }
