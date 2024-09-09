@@ -37,6 +37,7 @@ function SignUpPage() {
         <TextInput
           id="password"
           name="password"
+          type="password"
           value={inputs.password}
           onChange={handleChange}
           placeholder="Password"

@@ -40,7 +40,7 @@ export default function TextInput({
         onChange={onChange}
         onBlur={onBlur}
         onKeyDown={onKeyDown}
-        className={`bg-gray-50 border w-full py-3 px-2.5 rounded-lg mb-4 ${className}`}
+        className={`bg-gray-50 border w-full py-3 px-2.5 rounded-lg mb-4 focus:outline-none focus:ring focuse:ring-blue-950 ${className}`}
       />
     </>
   );
