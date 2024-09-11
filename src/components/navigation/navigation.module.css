@@ -1,0 +1,33 @@
+.nav {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #fafafa;
+}
+
+.ul {
+  display: flex;
+  padding: 7px 0;
+}
+
+.li {
+  width: 20%;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+.active {
+  color: #000958;
+}
+
+.li svg {
+  width: 21px;
+  margin: 0 auto;
+  stroke: #666;
+}
+
+.active svg {
+  stroke: #000958;
+}
