@@ -1,0 +1,13 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 75px - 1.25rem);
+  width: 100%;
+}
+
+.empty {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
