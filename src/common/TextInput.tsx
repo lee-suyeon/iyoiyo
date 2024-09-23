@@ -5,7 +5,6 @@ type TextInputProps = {
   name?: string;
   id: string;
   type?: string;
-  className?: string;
   placeholder?: string;
   value: string | number;
   maxLength?: number;
@@ -21,17 +20,17 @@ export default function TextInput({
   type = "text",
   placeholder,
   value,
-  className,
   maxLength = 30,
   onChange,
   onBlur,
   onKeyDown,
 }: TextInputProps) {
   return (
-    <>
-      {label && <label>{label}</label>}
+    <div className={classes.container}>
+      {label && <label className={classes.label}>{label}</label>}
       <input
         id={id}
+        className={classes.input}
         name={name}
         type={type}
         value={value}
@@ -40,8 +39,7 @@ export default function TextInput({
         onChange={onChange}
         onBlur={onBlur}
         onKeyDown={onKeyDown}
-        className={`bg-gray-50 border w-full py-3 px-2.5 rounded-lg mb-4 focus:outline-none focus:ring focuse:ring-blue-950 ${className}`}
       />
-    </>
+    </div>
   );
 }

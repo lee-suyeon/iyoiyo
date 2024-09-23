@@ -3,7 +3,6 @@
 import { useRef, useState } from "react";
 import classes from "./image-picker.module.css";
 import { Trash2 } from "react-feather";
-import { Button } from ".";
 
 interface ImagePickerProps {
   id: string;
@@ -27,8 +26,6 @@ export default function ImagePicker({
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-
-    console.log("file", file);
 
     if (!file) {
       setPickedImage(null);
