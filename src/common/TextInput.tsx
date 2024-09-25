@@ -6,7 +6,7 @@ type TextInputProps = {
   id: string;
   type?: string;
   placeholder?: string;
-  value: string | number;
+  value?: string | number;
   maxLength?: number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: () => void;

@@ -6,7 +6,7 @@ interface CheckBoxProps {
   name: string;
 }
 
-const RadioButton: React.FC<CheckBoxProps> = ({
+const CheckBox: React.FC<CheckBoxProps> = ({
   label,
   value,
   checked,
@@ -28,4 +28,4 @@ const RadioButton: React.FC<CheckBoxProps> = ({
   );
 };
 
-export default RadioButton;
+export default CheckBox;
