@@ -1,23 +1,25 @@
+import classes from "./button.module.css";
+
 interface ButtonProps {
-  primary?: boolean;
+  variant?: "primary" | "secondary";
   fullWidth?: boolean;
   onClick?: () => void;
+  className?: string;
   children: React.ReactNode;
 }
 
 export default function Button({
   children,
   fullWidth,
+  className,
   onClick,
-  primary = true,
+  variant = "secondary",
 }: ButtonProps) {
-  const buttonWidth = fullWidth ? "w-full" : "";
-
   return (
     <button
-      className={`${
-        primary ? "bg-blue-950" : "bg-blue-200"
-      } text-white py-3 px-4 rounded-full ${buttonWidth}`}
+      className={`${classes.button} ${classes[variant]} ${
+        fullWidth ? classes.fullWidth : ""
+      } ${className}`}
       onClick={onClick}
     >
       {children}

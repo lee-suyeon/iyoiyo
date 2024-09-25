@@ -1,0 +1,22 @@
+.button {
+  background-color: #bfdbfe;
+  color: #000958;
+  padding: 0.75rem 1.2rem;
+  height: 48px;
+  border-radius: 24px;
+}
+
+.primary {
+  color: #fff;
+  background-color: #000958;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  color: red;
+}
