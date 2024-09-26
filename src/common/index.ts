@@ -5,6 +5,7 @@ import ImagePicker from "./ImagePicker";
 import DateSelector from "./DateSelector";
 import SelectBox from "./SelectBox";
 import FormLabel from "./FormLabel";
+import Textarea from "./Textarea";
 
 export {
   Button,
@@ -14,4 +15,5 @@ export {
   DateSelector,
   SelectBox,
   FormLabel,
+  Textarea,
 };
