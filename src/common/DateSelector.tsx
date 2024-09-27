@@ -6,21 +6,24 @@ import classes from "./date-selector.module.css";
 
 interface DateSelectorProps {
   selected?: Date | null;
-  // onChange: (value: string) => void;
+  onDateChange: (date: Date | null) => void;
   name: string;
   label?: string;
 }
 
 export default function DateSelector({
   selected = new Date(),
-  // onChange,
+  onDateChange,
   label,
-  name,
 }: DateSelectorProps) {
   return (
     <div className={classes.container}>
       {label && <label className={classes.label}>{label}</label>}
-      <DatePicker selected={selected} dateFormat="yyyy.MM.dd" />
+      <DatePicker
+        selected={selected}
+        dateFormat="yyyy.MM.dd"
+        onChange={onDateChange}
+      />
     </div>
   );
 }
