@@ -7,6 +7,7 @@ import {
   ImagePicker,
   SelectBox,
   Textarea,
+  Button,
 } from "@/common";
 import classes from "./project-form.module.css";
 import GaugeForm from "../GaugeForm/GaugeForm";
@@ -75,8 +76,35 @@ export default function ProjectForm() {
     setStartDate(date);
   };
 
+  const submitProject = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const data = inputs;
+
+    try {
+      // Send POST request to the API
+      const response = await fetch("/api/project", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        console.log("success");
+      } else {
+        console.log("error");
+      }
+    } catch (error) {
+      console.log("error");
+    }
+  };
+
   return (
-    <form className={classes.container}>
+    <form className={classes.container} onClick={submitProject}>
       <ImagePicker
         id="project-image"
         placeholder="프로젝트 이미지를 추가해주세요."
@@ -89,6 +117,13 @@ export default function ProjectForm() {
         value={projectName}
         onChange={handleChange}
       />
+      <SelectBox
+        name="category"
+        label="카테고리"
+        value={category}
+        onChange={handleChange}
+        options={categoryOption}
+      />
       <TextInput
         id="patternBy"
         name="patternBy"
@@ -97,18 +132,19 @@ export default function ProjectForm() {
         value={patternBy}
         onChange={handleChange}
       />
-      <SelectBox
-        name="category"
-        label="카테고리"
-        value={category}
-        onChange={handleChange}
-        options={categoryOption}
-      />
       <DateSelector
         label="프로젝트 시작 날짜"
         name="startDate"
         selected={startDate}
         onDateChange={handleChangeDate}
+      />
+      <TextInput
+        id="link"
+        name="link"
+        label="링크"
+        placeholder="관련 링크를 입력해주세요."
+        value={link}
+        onChange={handleChange}
       />
       <TextInput
         id="yarn"
@@ -136,14 +172,6 @@ export default function ProjectForm() {
         onChange={handleChange}
       />
       <GaugeForm gauge={gauge} onChange={handleChange} />
-      <TextInput
-        id="link"
-        name="link"
-        label="링크"
-        placeholder="관련 링크를 입력해주세요."
-        value={link}
-        onChange={handleChange}
-      />
       <Textarea
         id="memo"
         name="memo"
@@ -152,6 +180,7 @@ export default function ProjectForm() {
         value={memo}
         onChange={handleChange}
       />
+      <Button variant="primary">프로젝트 추가</Button>
     </form>
   );
 }
